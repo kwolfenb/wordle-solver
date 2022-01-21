@@ -2,7 +2,6 @@ import React, { Component, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import '../styles/styles.css';
-import {answers} from '../data/answers'
 import { letterStates } from './guessContainer'
 
 
