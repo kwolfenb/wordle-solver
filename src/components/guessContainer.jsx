@@ -17,7 +17,8 @@ class GuessContainer extends Component {
   initialState = () => {
     return {
       gameStarted: false,
-      currentGuess: initialGuess(),
+      // currentGuess: initialGuess(),
+      currentGuess: 'orate',
       guessList: answers,
       currentGuessState: [
         {'letter': '', 'state': letterStates[0]},
@@ -157,6 +158,7 @@ class GuessContainer extends Component {
 
   selectGuess = () => {
     const guess = Math.floor(Math.random() * this.state.guessList.length)
+    if (this.state.numberOfGuesses < 2 && this.checkDuplicateLetters(this.state.guessList[guess])) return this.selectGuess();
     if (this.state.guessList.length == 0) return;
     this.setState({
       currentGuess: this.state.guessList[guess],
@@ -165,6 +167,8 @@ class GuessContainer extends Component {
     this.updateWord
     );
   }
+
+  checkDuplicateLetters = (word) => word && word.split("").some((letter,i) => word.lastIndexOf(letter) != i)
 
 
   generateLetterBox = (num) => {
@@ -213,7 +217,6 @@ class GuessContainer extends Component {
   }
 
   render() {
-    console.log('check win condition', this.state.guessList)
     return (
       <div className='container'>
         <div className="guess-container">
