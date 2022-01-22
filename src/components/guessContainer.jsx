@@ -17,8 +17,7 @@ class GuessContainer extends Component {
   initialState = () => {
     return {
       gameStarted: false,
-      // currentGuess: initialGuess(),
-      currentGuess: 'orate',
+      currentGuess: initialGuess(),
       guessList: answers,
       currentGuessState: [
         {'letter': '', 'state': letterStates[0]},

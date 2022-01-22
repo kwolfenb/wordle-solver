@@ -6,15 +6,14 @@ export const initialGuess = () => {
 
 const startingGuesses = [
   'orate',
+  'stair',
+  'loser',
   'roast',
   'raise',
   'arose',
-  'spark',
-  'print',
   'regal',
   'audio',
-  'stare',
-  'maker'
+  'stare'
 ]
 
 export const answers = [
